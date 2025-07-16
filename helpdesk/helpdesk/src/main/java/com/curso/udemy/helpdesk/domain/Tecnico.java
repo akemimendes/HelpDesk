@@ -8,6 +8,8 @@ import com.curso.udemy.helpdesk.domain.enums.Perfil;
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 
+
+
 @Entity
 public class Tecnico extends Pessoa{
 
