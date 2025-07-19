@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.curso.udemy.helpdesk.domain.Tecnico;
 import com.curso.udemy.helpdesk.domain.dtos.TecnicoDTO;
 import com.curso.udemy.helpdesk.services.TecnicoService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping(value = "/tecnicos")
@@ -39,10 +42,16 @@ public class TecnicoResource {
     }
 
     @PostMapping
-    public ResponseEntity<TecnicoDTO> create(@RequestBody TecnicoDTO objTDO) {
+    public ResponseEntity<TecnicoDTO> create(@Valid @RequestBody TecnicoDTO objTDO) {
         Tecnico newObj = service.create(objTDO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(newObj.getId()).toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<TecnicoDTO> update(@PathVariable Integer id, @Valid @RequestBody TecnicoDTO objTDO) {
+        Tecnico obj = service.update(id, objTDO);
+        return ResponseEntity.ok().body(new TecnicoDTO(obj));
     }
 
 }

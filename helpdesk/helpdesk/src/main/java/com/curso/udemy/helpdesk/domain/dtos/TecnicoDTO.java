@@ -10,6 +10,8 @@ import com.curso.udemy.helpdesk.domain.Tecnico;
 import com.curso.udemy.helpdesk.domain.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import jakarta.validation.constraints.NotNull;
+
 
 
 public class TecnicoDTO implements Serializable{
@@ -18,9 +20,13 @@ public class TecnicoDTO implements Serializable{
 
    
     protected Integer id;
+    @NotNull(message="O campo NOME é obrigatório")
     protected String nome;
+    @NotNull(message="O campo CPF é obrigatório")
     protected String cpf;
+    @NotNull(message="O campo EMAIL é obrigatório")
     protected String email;
+    @NotNull(message="O campo SENHA é obrigatório")
     protected String senha;
     protected Set<Integer> perfis=new HashSet<>();
 
