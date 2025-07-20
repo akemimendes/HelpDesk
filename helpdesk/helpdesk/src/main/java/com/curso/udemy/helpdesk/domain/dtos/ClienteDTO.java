@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import org.hibernate.validator.constraints.br.CPF;
 
-import com.curso.udemy.helpdesk.domain.Tecnico;
+import com.curso.udemy.helpdesk.domain.Cliente;
 import com.curso.udemy.helpdesk.domain.enums.Perfil;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -16,7 +16,7 @@ import jakarta.validation.constraints.NotNull;
 
 
 
-public class TecnicoDTO implements Serializable{
+public class ClienteDTO implements Serializable{
 
     public static final long serialVersionUID=1L;
 
@@ -36,12 +36,12 @@ public class TecnicoDTO implements Serializable{
     @JsonFormat(pattern="dd/MM/yyyy")
     protected LocalDate dataCriacao = LocalDate.now();
 
-    public TecnicoDTO() {
+    public ClienteDTO() {
         super();
         addPerfil(Perfil.CLIENTE);
     }
 
-    public TecnicoDTO(Tecnico obj) {
+    public ClienteDTO(Cliente obj) {
         this.id = obj.getId();
         this.nome =  obj.getNome();
         this.cpf =  obj.getCpf();
@@ -49,7 +49,7 @@ public class TecnicoDTO implements Serializable{
         this.senha =  obj.getSenha();
         this.perfis = obj.getPerfis().stream().map(x-> x.getCodigo()).collect(Collectors.toSet());
         this.dataCriacao =  obj.getDataCriacao();
-        addPerfil(Perfil.TECNICO);
+        addPerfil(Perfil.CLIENTE);
     }
 
     public Integer getId() {

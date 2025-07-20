@@ -27,11 +27,11 @@ public enum Prioridade {
         this.descricao = descricao;
     }
 
-    public static Perfil toEnum(Integer cod) {
+    public static Prioridade toEnum(Integer cod) {
         if (cod == null) {
             return null;
         }
-        for (Perfil x : Perfil.values()) {
+        for (Prioridade x : Prioridade.values()) {
             if (cod.equals(x.getCodigo())) {
                 return x;
             }
