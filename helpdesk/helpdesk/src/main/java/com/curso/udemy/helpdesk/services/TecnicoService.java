@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.curso.udemy.helpdesk.domain.Pessoa;
@@ -21,6 +22,8 @@ public class TecnicoService {
     private TecnicoRepository repository;
     @Autowired
     private PessoaRepository pessoaRepository;
+    @Autowired
+	private PasswordEncoder encoder;
 
     public Tecnico findById(Integer id) {
         Optional<Tecnico> obj = repository.findById(id);
@@ -33,6 +36,7 @@ public class TecnicoService {
 
     public Tecnico create(TecnicoDTO objDTO) {
         objDTO.setId(null);
+        objDTO.setSenha(encoder.encode(objDTO.getSenha()));
         validaPorCpfEmail(objDTO);
         Tecnico newObj = new Tecnico(objDTO);
         return repository.save(newObj);

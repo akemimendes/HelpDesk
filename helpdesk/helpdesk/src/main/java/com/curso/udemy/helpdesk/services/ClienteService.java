@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.curso.udemy.helpdesk.domain.Cliente;
@@ -21,6 +22,8 @@ public class ClienteService {
     private ClienteRepository repository;
     @Autowired
     private PessoaRepository pessoaRepository;
+    @Autowired
+	private PasswordEncoder encoder;
 
     public Cliente findById(Integer id) {
         Optional<Cliente> obj = repository.findById(id);
@@ -33,6 +36,7 @@ public class ClienteService {
 
     public Cliente create(ClienteDTO objDTO) {
         objDTO.setId(null);
+        objDTO.setSenha(encoder.encode(objDTO.getSenha()));
         validaPorCpfEmail(objDTO);
         Cliente newObj = new Cliente(objDTO);
         return repository.save(newObj);
