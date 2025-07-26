@@ -1,6 +1,5 @@
 package com.curso.udemy.helpdesk.security;
 
-
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -12,10 +11,10 @@ import io.jsonwebtoken.SignatureAlgorithm;
 
 @Component
 public class JWTUtil {
-	
+
 	@Value("${jwt.expiration}")
 	private Long expiration;
-	
+
 	@Value("${jwt.secret}")
 	private String secret;
 
@@ -24,17 +23,17 @@ public class JWTUtil {
 				.setSubject(email)
 				.setExpiration(new Date(System.currentTimeMillis() + expiration))
 				.signWith(SignatureAlgorithm.HS256, secret.getBytes()).compact();
-				
+
 	}
 
 	public boolean tokenValido(String token) {
 		Claims claims = getClaims(token);
-		if(claims != null) {
+		if (claims != null) {
 			String username = claims.getSubject();
 			Date expirationDate = claims.getExpiration();
 			Date now = new Date(System.currentTimeMillis());
-			
-			if(username != null && expirationDate != null && now.before(expirationDate)) {
+
+			if (username != null && expirationDate != null && now.before(expirationDate)) {
 				return true;
 			}
 		}
@@ -51,7 +50,7 @@ public class JWTUtil {
 
 	public String getUsername(String token) {
 		Claims claims = getClaims(token);
-		if(claims != null) {
+		if (claims != null) {
 			return claims.getSubject();
 		}
 		return null;
