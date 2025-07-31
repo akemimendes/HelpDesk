@@ -1,4 +1,4 @@
-## Projeto Help Desk - Backend Java + Spring Boot
+## Projeto Help Desk - Backend (Java + Spring Boot)
 
 Projeto desenvolvido no curso "Spring Boot + Angular" da Udemy(curso atualizado na plataforma em 2021).
 Alguns desafios foram surgindo durante o desenvolvimento(julho/2025) da aplicação por conta das versões dos recursos utilizados.
@@ -11,7 +11,7 @@ Alguns problemas em relação a versão e solução:
 
 2. Anotação @EnableGlobalMethodSecurity(prePostEnabled = true) ficou obsoleta sendo necessário a substituição por @EnableMethodSecurity(prePostEnabled = true) responsável pelo controle de acesso aos endpoints levando em consideração o usuário/autorização(classe SecurityConfig).
 
-3. No curso é utilizado o a plataforma "Heroku" para subir implantação nas nuvens do backend, porém essa não oferece mais serviços gratuitos, foi necessário implantar na RailWay.
+3. No curso é utilizado o a plataforma "Heroku" para implantação nas nuvens do backend, porém essa não oferece mais serviços gratuitos, foi necessário implantar na RailWay.
 
 O banco de dados utilizado pelo professor no curso foi o H2, porém decidir usar o MySQL, sendo necessário alguns ajustes no desenvolvimento e na implantação nas nuvens.
 
