@@ -1,4 +1,4 @@
-## Projeto Help Desk
+## Projeto Help Desk - Backend Java + Spring Boot
 
 Projeto desenvolvido no curso "Spring Boot + Angular" da Udemy(curso atualizado na plataforma em 2021).
 Alguns desafios foram surgindo durante o desenvolvimento(julho/2025) da aplicação por conta das versões dos recursos utilizados.
@@ -16,3 +16,5 @@ Alguns problemas em relação a versão e solução:
 O banco de dados utilizado pelo professor no curso foi o H2, porém decidir usar o MySQL, sendo necessário alguns ajustes no desenvolvimento e na implantação nas nuvens.
 
 Foram realizados vários testes atráves de requisições no POSTMAN depois da implantação nas nuvens, tudo funcionando corretamente.💪😄 
+
+Rumo ao desenvolvimento do frontend com Angular...
