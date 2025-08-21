@@ -19,6 +19,7 @@ Foram realizados vários testes atráves de requisições no POSTMAN depois da i
 
 Rumo ao desenvolvimento do frontend com Angular...
 
-** Atualizando informações: O período de teste na RailWay expirou, conseguir implantar o backend na AWS no EC2.**
+**Atualizando informações: O período de teste na RailWay expirou, conseguir implantar o backend na AWS no EC2.**
+
 
 
