@@ -1,6 +1,9 @@
 ## Projeto Help Desk - Backend (Java + Spring Boot)
 
 Projeto desenvolvido no curso "Spring Boot + Angular" da Udemy(curso atualizado na plataforma em 2021).
+
+Utilização de Java + Spring Boot com acesso a banco de dados MySQL, implementado com Spring Security autenticação e autorização.
+
 Alguns desafios foram surgindo durante o desenvolvimento(julho/2025) da aplicação por conta das versões dos recursos utilizados.
 
 Meu maior desafio no backend foi na construção da autenticação e autorização JWT.
@@ -20,6 +23,7 @@ Foram realizados vários testes atráves de requisições no POSTMAN depois da i
 Rumo ao desenvolvimento do frontend com Angular...
 
 **Atualizando informações: O período de teste na RailWay expirou, conseguir implantar o backend na AWS no EC2.**
+
 
 
 
