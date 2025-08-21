@@ -18,3 +18,6 @@ O banco de dados utilizado pelo professor no curso foi o H2, porém decidir usar
 Foram realizados vários testes atráves de requisições no POSTMAN depois da implantação nas nuvens, tudo funcionando corretamente.💪😄 
 
 Rumo ao desenvolvimento do frontend com Angular...
+
+** Atualizando informações: O período de teste na RailWay expirou, conseguir implantar o backend na AWS no EC2.
+
